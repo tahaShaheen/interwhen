@@ -24,7 +24,8 @@ dependencies = [
     "pydantic>=2.0.0",
     "regex",
     "tiktoken",
-    "vllm"
+    "vllm",
+    "z3-solver"
 ]
 
 [project.optional-dependencies]
