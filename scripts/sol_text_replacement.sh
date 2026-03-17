@@ -28,11 +28,12 @@ PROJECT_DIR="/scratch/$USER/interwhen"
 
 # Configure model identity and weights path.
 # Keep MODEL_NAME and MODEL_PATH aligned to the same checkpoint family.
-MODEL_NAME="${MODEL_NAME:-Qwen/Qwen3-30B-A3B-Thinking-2507}"
+MODEL_NAME="${MODEL_NAME:-Qwen/Qwen3-235B-A22B-Thinking-2507}"
 MODEL_ROOT="${MODEL_ROOT:-/data/datasets/community/huggingface/models--Qwen--Qwen3-235B-A22B-Thinking-2507}"
 MODEL_PATH="${MODEL_PATH:-}"
 TENSOR_PARALLEL_SIZE="${TENSOR_PARALLEL_SIZE:-2}"
 VLLM_CONTAINER="${VLLM_CONTAINER:-/home/$USER/vllm-latest.sif}"
+VLLM_ENTRYPOINT="${VLLM_ENTRYPOINT:-vllm.entrypoints.openai.api_server}"
 
 if [ -z "$MODEL_PATH" ]; then
     if [ -f "$MODEL_ROOT/refs/main" ]; then
@@ -77,7 +78,8 @@ START_ATTEMPT=1
 while [ "$START_ATTEMPT" -le "$MAX_START_RETRIES" ]; do
     echo "Starting vLLM (attempt $START_ATTEMPT/$MAX_START_RETRIES)"
 
-    apptainer run --nv --bind /data:/data "$VLLM_CONTAINER" \
+    apptainer exec --nv --bind /data:/data "$VLLM_CONTAINER" \
+        python -m "$VLLM_ENTRYPOINT" \
         --model "$MODEL_PATH" \
         --served-model-name "$MODEL_NAME" \
         --tensor-parallel-size "$TENSOR_PARALLEL_SIZE" \
