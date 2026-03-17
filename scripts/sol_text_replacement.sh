@@ -125,6 +125,7 @@ export INTERWHEN_MODEL_NAME="$MODEL_NAME"
 export INTERWHEN_TOKENIZER_NAME="$MODEL_PATH"
 export INTERWHEN_PORT="$PORT"
 export INTERWHEN_OUTPUT_FILE="$PROJECT_DIR/output_${SLURM_JOB_ID:-manual}.txt"
+export INTERWHEN_TRACE_FILE="$LOG_DIR/interwhen_trace_${SLURM_JOB_ID:-manual}.log"
 
 echo "Running text replacement example"
 python ./examples/text_replacement_example.py

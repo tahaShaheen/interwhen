@@ -3,7 +3,7 @@ import logging
 import os
 from transformers import AutoTokenizer
 from interwhen.monitors import SimpleTextReplaceMonitor
-from interwhen import stream_completion
+from interwhen.interject_test import stream_completion
 
 logger = logging.getLogger(__name__)
 
@@ -34,6 +34,11 @@ if __name__ == "__main__":
     model_name = os.getenv("INTERWHEN_MODEL_NAME", "Qwen/Qwen3-30B-A3B-Thinking-2507")
     tokenizer_name = os.getenv("INTERWHEN_TOKENIZER_NAME", model_name)
     port = int(os.getenv("INTERWHEN_PORT", "8000"))
+    trace_file = os.getenv("INTERWHEN_TRACE_FILE", "../output_trace.log")
+
+    # Start each run with a clean trace file for easier offline inspection.
+    with open(trace_file, "w", encoding="utf-8") as f:
+        f.write("")
 
     llm_server = init_llm_server(model_name, port=port)
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
@@ -54,7 +59,8 @@ if __name__ == "__main__":
         monitors=(SimpleTextReplaceMonitor("IsCheck", "</think>", async_execution=True),),
         add_delay=False,
         termination_requires_validation=False,
-        async_execution=True
+        async_execution=True,
+        trace_output_file=trace_file,
     ))
     
     # Save output to file
@@ -62,3 +68,4 @@ if __name__ == "__main__":
     with open(output_file, "w") as f:
         f.write(result)
     print(f"\n\nOutput saved to {output_file}")
+    print(f"Trace saved to {trace_file}")
