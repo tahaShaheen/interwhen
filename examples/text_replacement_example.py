@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import os
 from transformers import AutoTokenizer
 from interwhen.monitors import SimpleTextReplaceMonitor
 from interwhen import stream_completion
@@ -30,9 +31,12 @@ if __name__ == "__main__":
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
         force=True  # Override any existing configuration
     )
-    model_name = "Qwen/Qwen3-30B-A3B-Thinking-2507"
-    llm_server = init_llm_server(model_name)
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model_name = os.getenv("INTERWHEN_MODEL_NAME", "Qwen/Qwen3-30B-A3B-Thinking-2507")
+    tokenizer_name = os.getenv("INTERWHEN_TOKENIZER_NAME", model_name)
+    port = int(os.getenv("INTERWHEN_PORT", "8000"))
+
+    llm_server = init_llm_server(model_name, port=port)
+    tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
     # prepare the model input
     prompt = "Explain quantum computing in simple terms."
     messages = [
@@ -54,7 +58,7 @@ if __name__ == "__main__":
     ))
     
     # Save output to file
-    output_file = "../output.txt"
+    output_file = os.getenv("INTERWHEN_OUTPUT_FILE", "../output.txt")
     with open(output_file, "w") as f:
         f.write(result)
     print(f"\n\nOutput saved to {output_file}")
