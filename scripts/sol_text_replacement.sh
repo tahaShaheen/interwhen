@@ -20,14 +20,9 @@ OUT_LOG_FILE="$LOG_DIR/text_replacement_${SLURM_JOB_ID:-na}.out"
 ERR_LOG_FILE="$LOG_DIR/text_replacement_${SLURM_JOB_ID:-na}.err"
 exec >"$OUT_LOG_FILE" 2>"$ERR_LOG_FILE"
 
-module purge
-module load mamba
-source activate interwhen
-
 PROJECT_DIR="/scratch/$USER/interwhen"
 
 # Configure model identity and weights path.
-# Keep MODEL_NAME and MODEL_PATH aligned to the same checkpoint family.
 MODEL_NAME="${MODEL_NAME:-Qwen/Qwen3-235B-A22B-Thinking-2507}"
 MODEL_ROOT="${MODEL_ROOT:-/data/datasets/community/huggingface/models--Qwen--Qwen3-235B-A22B-Thinking-2507}"
 MODEL_PATH="${MODEL_PATH:-}"
@@ -72,14 +67,25 @@ cleanup() {
 }
 trap cleanup EXIT
 
+# ---------------------------------------------------------
+# Dynamic Python Discovery (Borrowed from run_sol.sh)
+# ---------------------------------------------------------
+VLLM_PYTHON_BIN="$(apptainer exec "$VLLM_CONTAINER" sh -lc 'command -v python3 || command -v python || true')"
+if [ -z "$VLLM_PYTHON_BIN" ]; then
+    echo "CRITICAL ERROR: Neither python3 nor python found in $VLLM_CONTAINER PATH." >&2
+    exit 1
+fi
+echo "Using container Python interpreter: $VLLM_PYTHON_BIN"
+
 MAX_START_RETRIES=5
 START_ATTEMPT=1
 
 while [ "$START_ATTEMPT" -le "$MAX_START_RETRIES" ]; do
     echo "Starting vLLM (attempt $START_ATTEMPT/$MAX_START_RETRIES)"
 
+    # Boot vLLM strictly using the container's internal Python binary
     apptainer exec --nv --bind /data:/data "$VLLM_CONTAINER" \
-        python -m "$VLLM_ENTRYPOINT" \
+        "$VLLM_PYTHON_BIN" -m "$VLLM_ENTRYPOINT" \
         --model "$MODEL_PATH" \
         --served-model-name "$MODEL_NAME" \
         --tensor-parallel-size "$TENSOR_PARALLEL_SIZE" \
@@ -121,7 +127,15 @@ while [ "$(curl -s -o /dev/null -w "%{http_code}" "http://localhost:${PORT}/v1/m
 done
 echo "vLLM is ready"
 
+# =========================================================
+# Execution Phase: Cleanly activate host environment
+# =========================================================
 cd "$PROJECT_DIR"
+
+echo "Loading Mamba and activating interwhen environment..."
+module purge
+module load mamba
+source activate interwhen
 
 export INTERWHEN_MODEL_NAME="$MODEL_NAME"
 export INTERWHEN_TOKENIZER_NAME="$MODEL_PATH"
