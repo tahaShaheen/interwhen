@@ -1,0 +1,165 @@
+MODEL_NAME: Qwen/Qwen3-30B-A3B-Thinking-2507
+MODEL_PATH: /scratch/tashahee/models/Qwen3-30B-A3B-Thinking-2507
+Assigned randomized free port: 10002
+Using container Python interpreter: /usr/bin/python3
+Starting vLLM (attempt 1/5)
+vLLM process is alive (PID: 1771303)
+Waiting for vLLM readiness on port 10002
+(APIServer pid=1771327) INFO 03-17 23:11:48 [utils.py:302] 
+(APIServer pid=1771327) INFO 03-17 23:11:48 [utils.py:302]        █     █     █▄   ▄█
+(APIServer pid=1771327) INFO 03-17 23:11:48 [utils.py:302]  ▄▄ ▄█ █     █     █ ▀▄▀ █  version 0.17.1
+(APIServer pid=1771327) INFO 03-17 23:11:48 [utils.py:302]   █▄█▀ █     █     █     █  model   /scratch/tashahee/models/Qwen3-30B-A3B-Thinking-2507
+(APIServer pid=1771327) INFO 03-17 23:11:48 [utils.py:302]    ▀▀  ▀▀▀▀▀ ▀▀▀▀▀ ▀     ▀
+(APIServer pid=1771327) INFO 03-17 23:11:48 [utils.py:302] 
+(APIServer pid=1771327) INFO 03-17 23:11:48 [utils.py:238] non-default args: {'port': 10002, 'model': '/scratch/tashahee/models/Qwen3-30B-A3B-Thinking-2507', 'trust_remote_code': True, 'served_model_name': ['Qwen/Qwen3-30B-A3B-Thinking-2507'], 'tensor_parallel_size': 2}
+(APIServer pid=1771327) INFO 03-17 23:12:10 [model.py:531] Resolved architecture: Qwen3MoeForCausalLM
+(APIServer pid=1771327) INFO 03-17 23:12:10 [model.py:1554] Using max model len 262144
+(APIServer pid=1771327) INFO 03-17 23:12:11 [scheduler.py:231] Chunked prefill is enabled with max_num_batched_tokens=2048.
+(APIServer pid=1771327) INFO 03-17 23:12:11 [vllm.py:747] Asynchronous scheduling is enabled.
+(EngineCore_DP0 pid=1771658) INFO 03-17 23:12:21 [core.py:101] Initializing a V1 LLM engine (v0.17.1) with config: model='/scratch/tashahee/models/Qwen3-30B-A3B-Thinking-2507', speculative_config=None, tokenizer='/scratch/tashahee/models/Qwen3-30B-A3B-Thinking-2507', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=262144, download_dir=None, load_format=auto, tensor_parallel_size=2, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=Qwen/Qwen3-30B-A3B-Thinking-2507, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore_DP0 pid=1771658) WARNING 03-17 23:12:21 [multiproc_executor.py:945] Reducing Torch parallelism from 16 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+(EngineCore_DP0 pid=1771658) INFO 03-17 23:12:21 [multiproc_executor.py:134] DP group leader: node_rank=0, node_rank_within_dp=0, master_addr=127.0.0.1, mq_connect_ip=10.139.126.46 (local), world_size=2, local_world_size=2
+(Worker pid=1771712) INFO 03-17 23:12:34 [parallel_state.py:1393] world_size=2 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:50399 backend=nccl
+(Worker pid=1771713) INFO 03-17 23:12:34 [parallel_state.py:1393] world_size=2 rank=1 local_rank=1 distributed_init_method=tcp://127.0.0.1:50399 backend=nccl
+(Worker pid=1771712) INFO 03-17 23:12:37 [pynccl.py:111] vLLM is using nccl==2.27.5
+(Worker pid=1771712) WARNING 03-17 23:12:38 [symm_mem.py:67] SymmMemCommunicator: Device capability 8.0 not supported, communicator is not available.
+(Worker pid=1771713) WARNING 03-17 23:12:38 [symm_mem.py:67] SymmMemCommunicator: Device capability 8.0 not supported, communicator is not available.
+(Worker pid=1771713) INFO 03-17 23:12:39 [parallel_state.py:1715] rank 1 in world size 2 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 1, EP rank 1, EPLB rank N/A
+(Worker pid=1771712) INFO 03-17 23:12:39 [parallel_state.py:1715] rank 0 in world size 2 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank 0, EPLB rank N/A
+(Worker pid=1771713) INFO 03-17 23:12:39 [base.py:106] Offloader set to NoopOffloader
+(Worker pid=1771712) INFO 03-17 23:12:40 [base.py:106] Offloader set to NoopOffloader
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:12:40 [gpu_model_runner.py:4281] Starting to load model /scratch/tashahee/models/Qwen3-30B-A3B-Thinking-2507...
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:12:41 [cuda.py:405] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:12:41 [flash_attn.py:587] Using FlashAttention version 2
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:12:41 [unquantized.py:186] Using TRITON backend for Unquantized MoE
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:14:11 [default_loader.py:293] Loading weights took 89.38 seconds
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:14:11 [gpu_model_runner.py:4364] Model loading took 28.51 GiB memory and 90.593964 seconds
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:14:23 [backends.py:916] Using cache directory: /home/tashahee/.cache/vllm/torch_compile_cache/38f6f330b4/rank_0_0/backbone for vLLM's torch.compile
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:14:23 [backends.py:976] Dynamo bytecode transform time: 11.09 s
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:14:31 [backends.py:350] Cache the graph of compile range (1, 2048) for later use
+(Worker pid=1771713) (Worker_TP1 pid=1771713) INFO 03-17 23:14:31 [backends.py:350] Cache the graph of compile range (1, 2048) for later use
+(Worker pid=1771712) (Worker_TP0 pid=1771712) WARNING 03-17 23:14:34 [fused_moe.py:1093] Using default MoE config. Performance might be sub-optimal! Config file not found at /usr/local/lib/python3.12/dist-packages/vllm/model_executor/layers/fused_moe/configs/E=128,N=384,device_name=NVIDIA_A100-SXM4-80GB.json
+(Worker pid=1771713) (Worker_TP1 pid=1771713) INFO 03-17 23:14:38 [decorators.py:580] saving AOT compiled function to /home/tashahee/.cache/vllm/torch_compile_cache/torch_aot_compile/abb039353497b0405b225ab3fcc3b5667a3de888070e36d6e39b19f31c4584cb/rank_1_0/model
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:14:38 [backends.py:366] Compiling a graph for compile range (1, 2048) takes 12.61 s
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:14:38 [monitor.py:35] torch.compile takes 26.33 s in total
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:14:38 [decorators.py:580] saving AOT compiled function to /home/tashahee/.cache/vllm/torch_compile_cache/torch_aot_compile/abb039353497b0405b225ab3fcc3b5667a3de888070e36d6e39b19f31c4584cb/rank_0_0/model
+(Worker pid=1771713) (Worker_TP1 pid=1771713) INFO 03-17 23:14:40 [decorators.py:588] saved AOT compiled function to /home/tashahee/.cache/vllm/torch_compile_cache/torch_aot_compile/abb039353497b0405b225ab3fcc3b5667a3de888070e36d6e39b19f31c4584cb/rank_1_0/model
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:14:40 [decorators.py:588] saved AOT compiled function to /home/tashahee/.cache/vllm/torch_compile_cache/torch_aot_compile/abb039353497b0405b225ab3fcc3b5667a3de888070e36d6e39b19f31c4584cb/rank_0_0/model
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:14:49 [gpu_worker.py:424] Available KV cache memory: 41.94 GiB
+(EngineCore_DP0 pid=1771658) INFO 03-17 23:14:49 [kv_cache_utils.py:1314] GPU KV cache size: 916,240 tokens
+(EngineCore_DP0 pid=1771658) INFO 03-17 23:14:49 [kv_cache_utils.py:1319] Maximum concurrency for 262,144 tokens per request: 3.50x
+(Worker pid=1771713) (Worker_TP1 pid=1771713) INFO 03-17 23:15:02 [custom_all_reduce.py:216] Registering 8342 cuda graph addresses
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:15:02 [custom_all_reduce.py:216] Registering 8342 cuda graph addresses
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:15:02 [gpu_model_runner.py:5386] Graph capturing finished in 13 secs, took 0.90 GiB
+(EngineCore_DP0 pid=1771658) INFO 03-17 23:15:03 [core.py:282] init engine (profile, create kv cache, warmup model) took 50.95 seconds
+(EngineCore_DP0 pid=1771658) INFO 03-17 23:15:05 [vllm.py:747] Asynchronous scheduling is enabled.
+(APIServer pid=1771327) INFO 03-17 23:15:05 [api_server.py:495] Supported tasks: ['generate']
+(APIServer pid=1771327) WARNING 03-17 23:15:06 [model.py:1355] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+(APIServer pid=1771327) INFO 03-17 23:15:06 [serving.py:185] Warming up chat template processing...
+(APIServer pid=1771327) INFO 03-17 23:15:06 [hf.py:318] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+(APIServer pid=1771327) INFO 03-17 23:15:06 [serving.py:210] Chat template warmup completed in 265.2ms
+(APIServer pid=1771327) INFO 03-17 23:15:06 [api_server.py:500] Starting vLLM API server 0 on http://0.0.0.0:10002
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:38] Available routes are:
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /openapi.json, Methods: GET, HEAD
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /docs, Methods: GET, HEAD
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /redoc, Methods: GET, HEAD
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /tokenize, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /detokenize, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /load, Methods: GET
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /version, Methods: GET
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /health, Methods: GET
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /metrics, Methods: GET
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /v1/models, Methods: GET
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /ping, Methods: GET
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /ping, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /invocations, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /v1/chat/completions, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /v1/chat/completions/render, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /v1/responses, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /v1/responses/{response_id}, Methods: GET
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /v1/responses/{response_id}/cancel, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /v1/completions, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /v1/completions/render, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /v1/messages, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /v1/messages/count_tokens, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /inference/v1/generate, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /scale_elastic_ep, Methods: POST
+(APIServer pid=1771327) INFO 03-17 23:15:06 [launcher.py:47] Route: /is_scaling_elastic_ep, Methods: POST
+(APIServer pid=1771327) INFO:     127.0.0.1:34198 - "GET /v1/models HTTP/1.1" 200 OK
+vLLM is ready
+Loading Mamba and activating interwhen environment...
+Running text replacement example
+(APIServer pid=1771327) WARNING 03-17 23:15:59 [protocol.py:51] The following fields were present in the request but ignored: {'prompt_cache'}
+(APIServer pid=1771327) INFO:     127.0.0.1:57540 - "POST /v1/completions HTTP/1.1" 200 OK
+Okay, the user asked for a simple explanation of quantum computing. Let me start by recalling what I know. Quantum computing is(APIServer pid=1771327) WARNING 03-17 23:16:00 [protocol.py:51] The following fields were present in the request but ignored: {'prompt_cache'}
+(APIServer pid=1771327) INFO:     127.0.0.1:57556 - "POST /v1/completions HTTP/1.1" 200 OK
+ like regular computers, so I need to avoid technical jargon. The user probably wants a basic understanding without getting bogged down in physics.
+
+First, I should compare it to classical computing. Everyone knows about bits being 0s and 1s. Maybe use a coin analogy for qubits. But wait, the coin has to be both heads and tails at the same time—that's superposition. But how to explain that simply? Maybe mention Schrödinger's cat, but that might be too much. Stick to the coin.
+
+Then entanglement. If two coins are linked, flipping one affects the other instantly. But I need to clarify it's not like communication; it's about correlation. Avoid saying "spooky action" unless it's necessary. The user might not need that detail.
+
+The main advantage is(APIServer pid=1771327) WARNING 03-17 23:16:01 [protocol.py:51] The following fields were present in the request but ignored: {'prompt_cache'}
+(APIServer pid=1771327) INFO:     127.0.0.1:57564 - "POST /v1/completions HTTP/1.1" 200 OK
+ speed for everyday tasks. They might think quantum computers are just faster versions. I should emphasize specific problems like drug discovery or optimization. But keep it simple: "not for browsing the web."
+
+Also, address common misconceptions. People hear "quantum" and think it's magic. Need to clarify it's for specific tasks, not general use. Mention that it's still in early stages, not replacing current computers.
+
+Check if the user is(APIServer pid=1771327) WARNING 03-17 23:16:02 [protocol.py:51] The following fields were present in the request but ignored: {'prompt_cache'}
+(APIServer pid=1771327) INFO:     127.0.0.1:57566 - "POST /v1/completions HTTP/1.1" 200 OK
+ a tech expert. They might be a student or someone curious. Avoid equations. Use everyday examples: passwords, weather models, new materials. Maybe compare to solving a maze—classical tries paths one by one, quantum checks many at once.
+
+Wait, the "many paths at once" part is(APIServer pid=1771327) WARNING 03-17 23:16:03 [protocol.py:51] The following fields were present in the request but ignored: {'prompt_cache'}
+(APIServer pid=1771327) INFO:     127.0.0.1:57574 - "POST /v1/completions HTTP/1.1" 200 OK
+ entirely accurate. It's about probability and interference. But simplifying to "checks many possibilities simultaneously" is(APIServer pid=1771327) WARNING 03-17 23:16:03 [protocol.py:51] The following fields were present in the request but ignored: {'prompt_cache'}
+(APIServer pid=1771327) INFO:     127.0.0.1:57588 - "POST /v1/completions HTTP/1.1" 200 OK
+ wrong for a basic explanation. Just note it's not literal parallel processing.
+
+Also, mention that quantum computers need extreme cold. Maybe say "supercooled" to keep it simple. But don't dive into cryogenics unless asked.
+
+Structure the explanation: start with bits vs. qubits, superposition, entanglement, then why it's useful. End with current limitations to set realistic expectations.
+
+Make sure to say it's not here to replace your laptop. That's important because media often overhypes it. The user might be worried they need a quantum phone or something.
+
+Check if all points are covered: simple terms, no jargon, correct misconceptions, practical uses. Avoid mentioning quantum tunneling or other complex terms. Keep it to the essentials.
+
+Double-check sources: qubits can be 0, 1, or both. Superposition is(APIServer pid=1771327) WARNING 03-17 23:16:04 [protocol.py:51] The following fields were present in the request but ignored: {'prompt_cache'}
+(APIServer pid=1771327) INFO:     127.0.0.1:57596 - "POST /v1/completions HTTP/1.1" 200 OK
+ just "both" but a probability state. But for simplicity, "both at once" is(APIServer pid=1771327) WARNING 03-17 23:16:04 [protocol.py:51] The following fields were present in the request but ignored: {'prompt_cache'}
+(APIServer pid=1771327) INFO:     127.0.0.1:57612 - "POST /v1/completions HTTP/1.1" 200 OK
+ perfect but acceptable. Maybe say "a mix of 0 and 1" instead.
+
+Entanglement: when two qubits are linked, measuring one instantly sets the other. But stress that it doesn't send information faster than light, so no communication. Maybe skip that detail to avoid confusion.
+
+Finally, wrap up with why it matters: solving problems that take years on regular computers in minutes. But clarify it's for specific problems, not all tasks.
+
+Make sure the tone is(APIServer pid=1771327) WARNING 03-17 23:16:05 [protocol.py:51] The following fields were present in the request but ignored: {'prompt_cache'}
+(APIServer pid=1771327) INFO:     127.0.0.1:57624 - "POST /v1/completions HTTP/1.1" 200 OK
+ too casual. The user said "simple terms," so friendly but clear. No markdown, just plain English. Keep paragraphs short. Use analogies they can visualize, like the coin and the maze.
+
+Wait, the coin analogy: heads and tails together. But when you measure, it collapses to one. Need to explain that measurement forces it to be one or the other. So the superposition is(APIServer pid=1771327) WARNING 03-17 23:16:06 [protocol.py:51] The following fields were present in the request but ignored: {'prompt_cache'}
+(APIServer pid=1771327) INFO:     127.0.0.1:57632 - "POST /v1/completions HTTP/1.1" 200 OK
+ observable until you look. That's crucial. So in the explanation, say "until you look, it's both."
+
+Also, entanglement example: two coins linked. Flip one, the other instantly matches. But they're not communicating; it's a pre-existing link. Maybe say "like magic trick coins" but avoid magic to keep it scientific.
+
+Check for common mistakes. Don't say quantum computers are faster for everything. Emphasize the niche applications. Mention current examples like sim(APIServer pid=1771327) INFO 03-17 23:16:06 [loggers.py:259] Engine 000: Avg prompt throughput: 10.1 tokens/s, Avg generation throughput: 84.2 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.1%, Prefix cache hit rate: 97.4%
+ulating molecules for medicine.
+
+Alright, structure: 1. Bits vs. qubits. 2. Superposition. 3. Entanglement. 4. Why it's powerful. 5. Current state. 6. What it's not. Keep it to 5-6 key points.
+
+Make sure the explanation flows: start simple, build up, then clarify limitations. End on a hopeful but realistic note.
+</think>
+
+Here's a simple explanation of quantum computing—no physics degree
+
+Output saved to /scratch/tashahee/interwhen/output_49108878.txt
+Trace saved to slurm_logs/49108878/interwhen_trace_49108878.log
+Completed successfully
+Stopping vLLM server (PID: 1771303)
+(APIServer pid=1771327) INFO 03-17 23:16:12 [launcher.py:122] Shutting down FastAPI HTTP server.
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:16:12 [multiproc_executor.py:749] Parent process exited, terminating worker
+(Worker pid=1771713) (Worker_TP1 pid=1771713) INFO 03-17 23:16:12 [multiproc_executor.py:749] Parent process exited, terminating worker
+(Worker pid=1771712) (Worker_TP0 pid=1771712) INFO 03-17 23:16:12 [multiproc_executor.py:802] WorkerProc shutting down.
+(Worker pid=1771713) (Worker_TP1 pid=1771713) INFO 03-17 23:16:12 [multiproc_executor.py:802] WorkerProc shutting down.

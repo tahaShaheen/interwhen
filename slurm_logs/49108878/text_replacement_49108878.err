@@ -1,0 +1,72 @@
+/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/chat_completion/protocol.py:346: SyntaxWarning: invalid escape sequence '\e'
+  "(e.g. 'abcdabcdabcd...' or '\emoji \emoji \emoji ...'). This feature "
+/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/completion/protocol.py:176: SyntaxWarning: invalid escape sequence '\e'
+  "(e.g. 'abcdabcdabcd...' or '\emoji \emoji \emoji ...'). This feature "
+(APIServer pid=1771327) The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+(APIServer pid=1771327) The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/chat_completion/protocol.py:346: SyntaxWarning: invalid escape sequence '\e'
+  "(e.g. 'abcdabcdabcd...' or '\emoji \emoji \emoji ...'). This feature "
+/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/completion/protocol.py:176: SyntaxWarning: invalid escape sequence '\e'
+  "(e.g. 'abcdabcdabcd...' or '\emoji \emoji \emoji ...'). This feature "
+/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/chat_completion/protocol.py:346: SyntaxWarning: invalid escape sequence '\e'
+  "(e.g. 'abcdabcdabcd...' or '\emoji \emoji \emoji ...'). This feature "
+/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/chat_completion/protocol.py:346: SyntaxWarning: invalid escape sequence '\e'
+  "(e.g. 'abcdabcdabcd...' or '\emoji \emoji \emoji ...'). This feature "
+/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/completion/protocol.py:176: SyntaxWarning: invalid escape sequence '\e'
+  "(e.g. 'abcdabcdabcd...' or '\emoji \emoji \emoji ...'). This feature "
+/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/completion/protocol.py:176: SyntaxWarning: invalid escape sequence '\e'
+  "(e.g. 'abcdabcdabcd...' or '\emoji \emoji \emoji ...'). This feature "
+(Worker pid=1771712) <frozen importlib._bootstrap_external>:1301: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(Worker pid=1771713) <frozen importlib._bootstrap_external>:1301: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(Worker pid=1771712) <frozen importlib._bootstrap_external>:1301: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(Worker pid=1771713) <frozen importlib._bootstrap_external>:1301: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:   0% Completed | 0/16 [00:00<?, ?it/s]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:   6% Completed | 1/16 [00:05<01:18,  5.26s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  12% Completed | 2/16 [00:11<01:24,  6.03s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  19% Completed | 3/16 [00:17<01:14,  5.71s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  25% Completed | 4/16 [00:23<01:09,  5.77s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  31% Completed | 5/16 [00:28<01:03,  5.75s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  38% Completed | 6/16 [00:34<00:58,  5.88s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  44% Completed | 7/16 [00:40<00:51,  5.74s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  50% Completed | 8/16 [00:45<00:45,  5.66s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  56% Completed | 9/16 [00:51<00:40,  5.83s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  62% Completed | 10/16 [00:58<00:35,  5.91s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  69% Completed | 11/16 [01:03<00:28,  5.77s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  75% Completed | 12/16 [01:09<00:22,  5.70s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  81% Completed | 13/16 [01:14<00:16,  5.63s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  88% Completed | 14/16 [01:22<00:12,  6.26s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards:  94% Completed | 15/16 [01:28<00:06,  6.10s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards: 100% Completed | 16/16 [01:29<00:00,  4.67s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Loading safetensors checkpoint shards: 100% Completed | 16/16 [01:29<00:00,  5.58s/it]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) 
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   2%|▏         | 1/51 [00:00<00:45,  1.10it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   6%|▌         | 3/51 [00:01<00:14,  3.28it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  10%|▉         | 5/51 [00:01<00:08,  5.17it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  14%|█▎        | 7/51 [00:01<00:06,  6.74it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 9/51 [00:01<00:05,  7.95it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  22%|██▏       | 11/51 [00:01<00:04,  8.87it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  25%|██▌       | 13/51 [00:01<00:03,  9.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  29%|██▉       | 15/51 [00:02<00:03, 10.11it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  33%|███▎      | 17/51 [00:02<00:03, 10.43it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  37%|███▋      | 19/51 [00:02<00:02, 10.67it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  41%|████      | 21/51 [00:02<00:02, 10.78it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  45%|████▌     | 23/51 [00:02<00:02, 10.93it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  49%|████▉     | 25/51 [00:03<00:02, 11.03it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  53%|█████▎    | 27/51 [00:03<00:02, 11.09it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  57%|█████▋    | 29/51 [00:03<00:01, 11.15it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  61%|██████    | 31/51 [00:03<00:01, 11.18it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  65%|██████▍   | 33/51 [00:04<00:03,  5.29it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  69%|██████▊   | 35/51 [00:04<00:02,  6.27it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  73%|███████▎  | 37/51 [00:05<00:02,  4.68it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  76%|███████▋  | 39/51 [00:05<00:02,  5.66it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  80%|████████  | 41/51 [00:06<00:02,  4.24it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  84%|████████▍ | 43/51 [00:06<00:01,  5.20it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  88%|████████▊ | 45/51 [00:07<00:01,  4.34it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  92%|█████████▏| 47/51 [00:07<00:00,  5.21it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  96%|█████████▌| 49/51 [00:07<00:00,  6.16it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:08<00:00,  3.62it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:08<00:00,  6.00it/s]
+(Worker pid=1771712) (Worker_TP0 pid=1771712) Capturing CUDA graphs (decode, FULL):   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   3%|▎         | 1/35 [00:00<00:08,  4.20it/s]Capturing CUDA graphs (decode, FULL):   9%|▊         | 3/35 [00:00<00:04,  7.96it/s]Capturing CUDA graphs (decode, FULL):  14%|█▍        | 5/35 [00:00<00:03,  9.53it/s]Capturing CUDA graphs (decode, FULL):  20%|██        | 7/35 [00:00<00:02, 10.28it/s]Capturing CUDA graphs (decode, FULL):  26%|██▌       | 9/35 [00:00<00:02, 10.78it/s]Capturing CUDA graphs (decode, FULL):  31%|███▏      | 11/35 [00:01<00:02, 11.12it/s]Capturing CUDA graphs (decode, FULL):  37%|███▋      | 13/35 [00:01<00:01, 11.34it/s]Capturing CUDA graphs (decode, FULL):  43%|████▎     | 15/35 [00:01<00:01, 11.42it/s]Capturing CUDA graphs (decode, FULL):  49%|████▊     | 17/35 [00:01<00:01, 11.54it/s]Capturing CUDA graphs (decode, FULL):  54%|█████▍    | 19/35 [00:01<00:01, 11.62it/s]Capturing CUDA graphs (decode, FULL):  60%|██████    | 21/35 [00:01<00:01, 11.63it/s]Capturing CUDA graphs (decode, FULL):  66%|██████▌   | 23/35 [00:02<00:01, 11.66it/s]Capturing CUDA graphs (decode, FULL):  71%|███████▏  | 25/35 [00:02<00:00, 11.62it/s]Capturing CUDA graphs (decode, FULL):  77%|███████▋  | 27/35 [00:02<00:00, 11.70it/s]Capturing CUDA graphs (decode, FULL):  83%|████████▎ | 29/35 [00:02<00:00, 11.71it/s]Capturing CUDA graphs (decode, FULL):  89%|████████▊ | 31/35 [00:02<00:00, 11.73it/s]Capturing CUDA graphs (decode, FULL):  94%|█████████▍| 33/35 [00:02<00:00, 11.70it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 35/35 [00:03<00:00, 11.66it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 35/35 [00:03<00:00, 11.13it/s]
+(APIServer pid=1771327) INFO:     Started server process [1771327]
+(APIServer pid=1771327) INFO:     Waiting for application startup.
+(APIServer pid=1771327) INFO:     Application startup complete.
+
+=====================================================================
+This module is only for creating or activating Python environments:
+$ mamba create -n myenv -c conda-forge python=3 <package_name>
+$ source activate myenv
+
+Only run "pip install" after activating an environment.
+Running pip without activating an environment is known to cause issues.
+
+To list available environments:
+$ mamba info --envs
+
+Other uses are not tested. More info: https://links.asu.edu/solpy
+=====================================================================
+
+  
+2026-03-17 23:15:59,080 - interwhen.interject_test - WARNING - ==================================================Calling LM with prompt (call #0)==================================================
+2026-03-17 23:16:00,720 - interwhen.interject_test - WARNING - ==================================================Calling LM with prompt (call #1)==================================================
+2026-03-17 23:16:01,944 - interwhen.interject_test - WARNING - ==================================================Calling LM with prompt (call #2)==================================================
+2026-03-17 23:16:02,608 - interwhen.interject_test - WARNING - ==================================================Calling LM with prompt (call #3)==================================================
+2026-03-17 23:16:03,068 - interwhen.interject_test - WARNING - ==================================================Calling LM with prompt (call #4)==================================================
+2026-03-17 23:16:03,250 - interwhen.interject_test - WARNING - ==================================================Calling LM with prompt (call #5)==================================================
+2026-03-17 23:16:04,540 - interwhen.interject_test - WARNING - ==================================================Calling LM with prompt (call #6)==================================================
+2026-03-17 23:16:04,708 - interwhen.interject_test - WARNING - ==================================================Calling LM with prompt (call #7)==================================================
+2026-03-17 23:16:05,434 - interwhen.interject_test - WARNING - ==================================================Calling LM with prompt (call #8)==================================================
+2026-03-17 23:16:06,039 - interwhen.interject_test - WARNING - ==================================================Calling LM with prompt (call #9)==================================================
