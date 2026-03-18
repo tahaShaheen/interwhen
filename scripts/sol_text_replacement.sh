@@ -27,7 +27,7 @@ MODEL_NAME="Qwen/Qwen3-30B-A3B-Thinking-2507"
 MODEL_PATH="/scratch/$USER/models/Qwen3-30B-A3B-Thinking-2507"
 
 TENSOR_PARALLEL_SIZE="${TENSOR_PARALLEL_SIZE:-2}"
-VLLM_CONTAINER="${VLLM_CONTAINER:-/home/$USER/vllm-latest.sif}"
+VLLM_CONTAINER="/home/$USER/vllm-latest.sif"
 VLLM_ENTRYPOINT="${VLLM_ENTRYPOINT:-vllm.entrypoints.openai.api_server}"
 
 if [ -z "$MODEL_PATH" ]; then
@@ -41,11 +41,6 @@ fi
 
 if [ -z "$MODEL_PATH" ] || [ ! -d "$MODEL_PATH" ]; then
     echo "ERROR: Could not resolve MODEL_PATH. Set MODEL_PATH explicitly." >&2
-    exit 1
-fi
-
-if [ ! -f "$VLLM_CONTAINER" ]; then
-    echo "ERROR: VLLM_CONTAINER not found at $VLLM_CONTAINER" >&2
     exit 1
 fi
 
