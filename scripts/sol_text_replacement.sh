@@ -82,7 +82,7 @@ while [ "$START_ATTEMPT" -le "$MAX_START_RETRIES" ]; do
     export APPTAINERENV_PYTHONNOUSERSITE=1
 
     # Boot vLLM strictly using the container's internal Python binary
-    apptainer exec --nv --bind /data:/data "$VLLM_CONTAINER" \
+    apptainer exec --nv --bind /data:/data --bind /scratch:/scratch "$VLLM_CONTAINER" \
         "$VLLM_PYTHON_BIN" -m "$VLLM_ENTRYPOINT" \
         --model "$MODEL_PATH" \
         --served-model-name "$MODEL_NAME" \
