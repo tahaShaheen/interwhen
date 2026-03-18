@@ -22,10 +22,10 @@ exec >"$OUT_LOG_FILE" 2>"$ERR_LOG_FILE"
 
 PROJECT_DIR="/scratch/$USER/interwhen"
 
-# Configure model identity and weights path.
-MODEL_NAME="${MODEL_NAME:-Qwen/Qwen3-235B-A22B-Thinking-2507}"
-MODEL_ROOT="${MODEL_ROOT:-/data/datasets/community/huggingface/models--Qwen--Qwen3-235B-A22B-Thinking-2507}"
-MODEL_PATH="${MODEL_PATH:-}"
+# Configure model identity and explicit weights path
+MODEL_NAME="Qwen/Qwen3-30B-A3B-Thinking-2507"
+MODEL_PATH="/scratch/$USER/models/Qwen3-30B-A3B-Thinking-2507"
+
 TENSOR_PARALLEL_SIZE="${TENSOR_PARALLEL_SIZE:-2}"
 VLLM_CONTAINER="${VLLM_CONTAINER:-/home/$USER/vllm-latest.sif}"
 VLLM_ENTRYPOINT="${VLLM_ENTRYPOINT:-vllm.entrypoints.openai.api_server}"
@@ -83,12 +83,16 @@ START_ATTEMPT=1
 while [ "$START_ATTEMPT" -le "$MAX_START_RETRIES" ]; do
     echo "Starting vLLM (attempt $START_ATTEMPT/$MAX_START_RETRIES)"
 
+    # Force the container to ignore the host machine's Python packages
+    export APPTAINERENV_PYTHONNOUSERSITE=1
+
     # Boot vLLM strictly using the container's internal Python binary
     apptainer exec --nv --bind /data:/data "$VLLM_CONTAINER" \
         "$VLLM_PYTHON_BIN" -m "$VLLM_ENTRYPOINT" \
         --model "$MODEL_PATH" \
         --served-model-name "$MODEL_NAME" \
         --tensor-parallel-size "$TENSOR_PARALLEL_SIZE" \
+        --trust-remote-code \
         --port "$PORT" &
 
     VLLM_PID=$!
